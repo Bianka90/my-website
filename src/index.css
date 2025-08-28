@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* Regular */
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium */
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Black Italic */
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-BlackItalic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MrDeHaviland";
+  src: url("/fonts/MrDeHaviland-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Add other weights/italics as needed */
+body {
+  font-family: "Satoshi", sans-serif;
+}
+#hero-name,
+#hero-name-lg {
+  font-family: "MrDeHaviland", cursive;
+}
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%) rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%) rotateY(-90deg);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(0) rotateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slide-in-right 0.8s cubic-bezier(0.28, -0.15, 0.2, 0.55);
+}
+
+.slide-in-left {
+  animation: slide-in-left 0.8s cubic-bezier(0.28, -0.15, 0.2, 0.55);
+}
