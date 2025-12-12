@@ -8,8 +8,12 @@ export default function About() {
   const img1Ref = useRef();
   const img2Ref = useRef();
 
-  const img1InView = useInView(img1Ref, "0px 0px -200px 0px");
-  const img2InView = useInView(img2Ref, "0px 0px -200px 0px");
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const margin = isMobile ? "0px 0px -50px 0px" : "0px 0px -200px 0px";
+
+  const img1InView = useInView(img1Ref, margin);
+  const img2InView = useInView(img2Ref, margin);
+
   return (
     <section
       id="about"
