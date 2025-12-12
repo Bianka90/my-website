@@ -16,9 +16,11 @@ export default function Hero() {
 
         {/* Buttons on small screens */}
         <div className="flex md:hidden absolute bottom-10 left-1/2 transform -translate-x-1/2 space-x-4">
-          <button className="px-4 py-2 bg-white text-stone-950 font-bold rounded cursor-pointer">
-            Contact
-          </button>
+          <a href="#contact">
+            <button className="px-4 py-2 bg-white text-stone-950 font-bold rounded cursor-pointer">
+              Contact
+            </button>
+          </a>
           <button className=" px-4 py-2 bg-white text-stone-950 font-bold rounded cursor-pointer">
             Portfolio
           </button>
@@ -48,12 +50,16 @@ export default function Hero() {
           Hi, I'm Bianka, a Violinist
         </p>
         <div className="flex space-x-4">
-          <button className="px-4 py-2 bg-white text-stone-950 font-bold rounded cursor-pointer">
-            <span>Contact</span>
-          </button>
-          <button className="px-4 py-2 bg-white text-stone-950 font-bold rounded cursor-pointer">
-            Portfolio
-          </button>
+          <a href="#contact">
+            <button className="px-4 py-2 bg-white text-stone-950 font-bold rounded cursor-pointer">
+              <span>Contact</span>
+            </button>
+          </a>
+          <a href="#portfolio">
+            <button className="px-4 py-2 bg-white text-stone-950 font-bold rounded cursor-pointer">
+              Portfolio
+            </button>
+          </a>
         </div>
       </div>
     </section>

@@ -11,7 +11,7 @@ export default function Footer() {
         <p className="text-sm text-right">
           Made by{" "}
           <a
-            href="https://your-website.com"
+            href="https://williamromero.dev"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-gray-300"
