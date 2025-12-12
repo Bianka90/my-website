@@ -1,26 +1,40 @@
-import { useState } from "react";
-import { useEffect } from "react";
-export function useInView(ref, rootMargin = "0px") {
+import { useState, useEffect } from "react";
+
+export function useInView(ref, rootMargin = "0px 0px -150px 0px") {
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return;
+    const element = ref.current;
+    if (!element) return;
+
+    // iOS Safari / webview / SSR fallback
+    if (
+      typeof window === "undefined" ||
+      typeof IntersectionObserver === "undefined"
+    ) {
+      // No IO support? Just show the element.
+      setIsInView(true);
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          console.log("Is intersecting?", entry.isIntersecting);
           setIsInView(true);
-          observer.unobserve(ref.current); // stop observing after triggered
+          observer.unobserve(entry.target); // stop after first time
         }
       },
-      { rootMargin }
+      {
+        root: null,
+        rootMargin,
+        threshold: 0.1,
+      }
     );
 
-    observer.observe(ref.current);
+    observer.observe(element);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      observer.disconnect();
     };
   }, [ref, rootMargin]);
 

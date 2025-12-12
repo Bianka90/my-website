@@ -8,8 +8,8 @@ export default function About() {
   const img1Ref = useRef();
   const img2Ref = useRef();
 
-  const img1InView = useInView(img1Ref, "-200px"); // trigger a bit before visible
-  const img2InView = useInView(img2Ref, "-200px");
+  const img1InView = useInView(img1Ref, "0px 0px -200px 0px");
+  const img2InView = useInView(img2Ref, "0px 0px -200px 0px");
   return (
     <section
       id="about"
