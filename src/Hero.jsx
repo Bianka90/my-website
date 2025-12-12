@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="w-full md:w-1/3 relative flex justify-center items-center slide-in-left">
         <img
           src={bianka}
-          alt="Bianka Halmai"
+          alt="Bianka Halmai, violinist and teacher"
           className="object-contain  max-w-screen max-h-screen md:max-w-full md:max-h-full"
         />
 
