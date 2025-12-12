@@ -1,6 +1,10 @@
+import instagramIcon from "./assets/instagram1.png";
 export default function Contact() {
   return (
-    <section className="w-full min-h-screen bg-stone-900 text-white flex flex-col items-center pb-16 pt-20 px-5 md:px-20">
+    <section
+      id="contact"
+      className="w-full min-h-screen bg-stone-950 text-white flex flex-col items-center pb-16 pt-20 px-5 md:px-20"
+    >
       {/* Heading */}
       <div className="w-full max-w-4xl text-left">
         <h2 className="text-4xl font-bold tracking-wide">Contact Me</h2>
@@ -25,11 +29,25 @@ export default function Contact() {
             <li>
               📧 <span className="ml-2">info@biankahalmai.com</span>
             </li>
-            <li>
-              📞 <span className="ml-2">+123 456 7890</span>
-            </li>
+
             <li>
               🌐 <span className="ml-2">www.biankahalmai.com</span>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/biankahalmai?utm_source=ig_web_button_share_sheet&igsh=ZngzbWQ0MXh1cXFw"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="border py-1 px-3 rounded-full animate-pulse cursor-pointer">
+                  <img
+                    src={instagramIcon}
+                    alt=""
+                    className="w-6 h-6 inline bg-white rounded-full -ml-1"
+                  />
+                  <span className="ml-2">Bianka Halmai</span>
+                </button>
+              </a>
             </li>
           </ul>
         </div>
@@ -62,7 +80,7 @@ export default function Contact() {
           </div>
           <button
             type="submit"
-            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6 rounded-lg transition"
+            className="w-full bg-red-400 hover:bg-red-500 text-white py-2 px-6 rounded-lg transition cursor-pointer"
           >
             Send Message
           </button>

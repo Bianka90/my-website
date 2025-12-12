@@ -46,6 +46,8 @@
 /* Add other weights/italics as needed */
 body {
   font-family: "Satoshi", sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 #hero-name,
 #hero-name-lg {
@@ -53,30 +55,103 @@ body {
 }
 @keyframes slide-in-right {
   from {
-    transform: translateX(100%) rotateY(90deg);
+    transform: translateX(100%) rotateY(50deg) scale(0.6);
     opacity: 0;
   }
   to {
-    transform: translateX(0) rotateY(0);
+    transform: translateX(0) rotateY(0deg) scale(1);
     opacity: 1;
   }
 }
 
 @keyframes slide-in-left {
   from {
-    transform: translateX(-100%) rotateY(-90deg);
-    opacity: 0.5;
+    transform: translateX(-100%) rotateY(-50deg) scale(0.6);
+    opacity: 0;
   }
   to {
-    transform: translateX(0) rotateY(0);
+    transform: translateX(0) rotateY(0deg) scale(1);
     opacity: 1;
   }
 }
 
-.slide-in-right {
-  animation: slide-in-right 0.8s cubic-bezier(0.28, -0.15, 0.2, 0.55);
+@keyframes slide-out-right {
+  from {
+    transform: translateX(0) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%) rotateY(50deg) scale(0.6);
+    opacity: 0;
+  }
 }
 
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%) rotateY(-50deg) scale(0.6);
+    opacity: 0;
+  }
+}
+
+/* Classes */
+.slide-in-right {
+  animation: slide-in-right 0.8s forwards;
+}
 .slide-in-left {
-  animation: slide-in-left 0.8s cubic-bezier(0.28, -0.15, 0.2, 0.55);
+  animation: slide-in-left 0.8s forwards;
+}
+.slide-out-right {
+  animation: slide-out-right 0.8s forwards;
+}
+.slide-out-left {
+  animation: slide-out-left 0.8s forwards;
+}
+
+/* Card stacking */
+.carousel-container {
+  position: relative;
+  /* overflow: hidden; */
+}
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Optional 3D effect */
+.card img {
+  border-radius: 0.5rem;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: 0.4s;
+}
+.card img:hover {
+  cursor: pointer;
+  transition: 0.4s;
+  filter: brightness(80%);
+}
+@layer utilities {
+  @keyframes typewriter-keys {
+    from {
+      width: 0ch;
+    }
+    to {
+      width: 20ch; /* match the number of characters */
+    }
+  }
+
+  .animate-typewriter-keys {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    animation: typewriter-keys 2s steps(25) forwards;
+  }
+}
+svg {
+  display: block;
 }
