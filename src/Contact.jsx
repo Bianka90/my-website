@@ -1,90 +1,144 @@
 import instagramIcon from "./assets/instagram1.png";
+
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="w-full min-h-screen bg-stone-950 text-white flex flex-col items-center pb-16 pt-20 px-5 md:px-20"
+      className="w-screen min-h-screen bg-stone-950 relative overflow-hidden flex flex-col justify-between px-[clamp(2rem,10vw,8rem)] py-16 md:py-20"
     >
-      {/* Heading */}
-      <div className="w-full max-w-4xl text-left">
-        <h2 className="text-4xl font-bold tracking-wide">Contact Me</h2>
-        <div className="border-b-4 border-white w-20  my-4"></div>
-        <p className="text-gray-300">
-          If you’re interested in my work, have a project, or want to
-          collaborate, I’d love to talk.
-        </p>
+      {/* Vertical rule */}
+      <div className="absolute left-[clamp(1.25rem,8vw,6rem)] top-0 bottom-0 w-px bg-white/10 z-10" />
+
+      {/* Top row */}
+      <div className="relative z-20 flex items-center justify-between w-full">
+        <p className="text-white/30 text-xs uppercase tracking-[0.4em]">Contact</p>
+        <p className="text-white/20 text-[10px] tabular-nums tracking-widest">04</p>
       </div>
 
-      {/* Content */}
-      <div className="w-full max-w-4xl mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 ">
-        {/* Contact Info */}
-        <div className="space-y-6">
-          <h3 className="text-2xl font-semibold">Get in touch</h3>
-          <p className="text-gray-300">
-            I’d love to hear from you! Whether you’ve got a project in mind,
-            want to collaborate, or are interested in my work, feel free to
-            reach out.
-          </p>
-          <ul className="space-y-4">
-            <li>
-              📧 <span className="ml-2">info@biankahalmai.com</span>
-            </li>
+      {/* Main content */}
+      <div className="relative z-20 flex flex-col md:flex-row md:items-end gap-16 md:gap-24 mt-16 md:mt-0">
 
-            <li>
-              🌐 <span className="ml-2">www.biankahalmai.com</span>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/biankahalmai?utm_source=ig_web_button_share_sheet&igsh=ZngzbWQ0MXh1cXFw"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="border py-1 px-3 rounded-full animate-pulse cursor-pointer">
-                  <img
-                    src={instagramIcon}
-                    alt=""
-                    className="w-6 h-6 inline bg-white rounded-full -ml-1"
-                  />
-                  <span className="ml-2">Bianka Halmai</span>
-                </button>
-              </a>
-            </li>
-          </ul>
+        {/* Left — headline + info */}
+        <div className="md:w-1/2 flex flex-col justify-end">
+
+          <div className="overflow-hidden mb-1">
+            <h2 className="text-[clamp(3rem,7vw,7rem)] font-light text-white leading-[0.9] tracking-tight">
+              Let's
+            </h2>
+          </div>
+          <div className="overflow-hidden mb-8">
+            <h2
+              className="text-[clamp(3rem,7vw,7rem)] font-light leading-[0.9] tracking-tight text-transparent"
+              style={{ WebkitTextStroke: "1px rgba(255,255,255,0.3)" }}
+            >
+              Connect.
+            </h2>
+          </div>
+
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-8 h-px bg-white/30" />
+            <p className="text-white/50 text-xs tracking-[0.25em] uppercase">
+              Always open to new projects
+            </p>
+          </div>
+
+          <p className="text-white/40 text-sm leading-relaxed max-w-xs mb-12">
+            Have a project in mind, want to collaborate, or interested in
+            lessons? Reach out — I'd love to hear from you.
+          </p>
+
+          {/* Contact details */}
+          <div className="space-y-5">
+            
+              <a href="mailto:info@biankahalmai.com"
+              className="flex items-center gap-4 group"
+            >
+              <div className="w-8 h-px bg-white/20 group-hover:bg-white/50 transition-colors duration-200" />
+              <span className="text-white/50 text-sm tracking-wide group-hover:text-white transition-colors duration-200">
+                info@biankahalmai.com
+              </span>
+            </a>
+
+            
+             <a href="https://www.biankahalmai.com"
+              className="flex items-center gap-4 group"
+            >
+              <div className="w-8 h-px bg-white/20 group-hover:bg-white/50 transition-colors duration-200" />
+              <span className="text-white/50 text-sm tracking-wide group-hover:text-white transition-colors duration-200">
+                www.biankahalmai.com
+              </span>
+            </a>
+
+            
+              <a href="https://www.instagram.com/biankahalmai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 group"
+            >
+              <div className="w-8 h-px bg-white/20 group-hover:bg-white/50 transition-colors duration-200" />
+              <span className="flex items-center gap-2 text-white/50 text-sm tracking-wide group-hover:text-white transition-colors duration-200">
+                <img src={instagramIcon} alt="" className="w-4 h-4 rounded-full bg-white" />
+                biankahalmai
+              </span>
+            </a>
+          </div>
         </div>
 
-        {/* Contact Form */}
-        <form className="space-y-6">
-          <div>
-            <label className="block mb-2 text-sm font-medium">Name</label>
+        {/* Vertical divider */}
+        <div className="hidden md:block w-px self-stretch bg-white/10" />
+
+        {/* Right — form */}
+        <form className="md:w-1/2 flex flex-col gap-8">
+          <div className="relative border-b border-white/15 focus-within:border-white/50 transition-colors duration-200">
+            <label className="block text-white/30 text-[10px] uppercase tracking-[0.3em] mb-3">
+              Name
+            </label>
             <input
               type="text"
-              className="w-full px-4 py-2 rounded-lg bg-stone-900 border border-stone-700 focus:outline-none focus:border-indigo-500"
               placeholder="Your name"
+              className="w-full bg-transparent text-white text-sm placeholder-white/20 pb-3 focus:outline-none"
             />
           </div>
-          <div>
-            <label className="block mb-2 text-sm font-medium">Email</label>
+
+          <div className="relative border-b border-white/15 focus-within:border-white/50 transition-colors duration-200">
+            <label className="block text-white/30 text-[10px] uppercase tracking-[0.3em] mb-3">
+              Email
+            </label>
             <input
               type="email"
-              className="w-full px-4 py-2 rounded-lg bg-stone-900 border border-stone-700 focus:outline-none focus:border-indigo-500"
-              placeholder="Your email"
+              placeholder="your@email.com"
+              className="w-full bg-transparent text-white text-sm placeholder-white/20 pb-3 focus:outline-none"
             />
           </div>
-          <div>
-            <label className="block mb-2 text-sm font-medium">Message</label>
+
+          <div className="relative border-b border-white/15 focus-within:border-white/50 transition-colors duration-200">
+            <label className="block text-white/30 text-[10px] uppercase tracking-[0.3em] mb-3">
+              Message
+            </label>
             <textarea
               rows="5"
-              className="w-full px-4 py-2 rounded-lg bg-stone-900 border border-stone-700 focus:outline-none focus:border-indigo-500"
-              placeholder="Your message..."
-            ></textarea>
+              placeholder="Tell me about your project..."
+              className="w-full bg-transparent text-white text-sm placeholder-white/20 pb-3 focus:outline-none resize-none"
+            />
           </div>
+
           <button
             type="submit"
-            className="w-full bg-red-400 hover:bg-red-500 text-white py-2 px-6 rounded-lg transition cursor-pointer"
+            className="self-start px-8 py-3 bg-white text-stone-950 text-sm font-semibold tracking-widest uppercase hover:bg-stone-200 transition-colors duration-200 cursor-pointer"
           >
             Send Message
           </button>
         </form>
+      </div>
+
+      {/* Bottom row */}
+      <div className="relative z-20 flex items-center justify-between mt-16 md:mt-0">
+        <p className="text-white/20 text-[10px] uppercase tracking-[0.3em]">
+          Bianka Halmai · Violinist
+        </p>
+        <p className="text-white/20 text-[10px] uppercase tracking-[0.3em]">
+          © {new Date().getFullYear()}
+        </p>
       </div>
     </section>
   );

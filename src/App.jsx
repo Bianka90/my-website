@@ -11,7 +11,6 @@ import Lessons from "./Lessons";
 function App() {
   return (
     <>
-      {console.log(document.body.scrollHeight)}
       <Navbar />
       <Hero />
       <About />
