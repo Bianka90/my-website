@@ -24,7 +24,7 @@ export default function Navbar() {
           <div className="relative flex h-16 items-center justify-between px-[clamp(2rem,10vw,8rem)] bg-stone-950/80 backdrop-blur-md border-b border-white/5">
 
             {/* Vertical rule accent */}
-            <div className="absolute left-[clamp(1.25rem,8vw,6rem)] top-0 bottom-0 w-px -ml-[15px] bg-white/10" />
+            <div className="absolute left-[clamp(1.25rem,8vw,6rem)] top-0 bottom-0 w-px bg-white/10" />
 
             {/* Left — logo/name */}
             
